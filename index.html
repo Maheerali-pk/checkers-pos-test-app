@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+      <style>
+         * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+         }
+         html,
+         body {
+            height: 100%;
+            width: 100%;
+         }
+         body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+         }
+
+         #board {
+            display: grid;
+            grid-template-columns: repeat(8, 50px);
+         }
+         .cell {
+            height: 50px;
+            width: 50px;
+            position: relative;
+         }
+         .cell.light {
+            background-color: #c6c6c6;
+         }
+         .cell.dark {
+            background-color: #6b6660;
+         }
+         .cell.red::after {
+            content: "";
+            display: block;
+            position: absolute;
+            height: 30px;
+            width: 30px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: red;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+         }
+         .cell.white::after {
+            content: "";
+            display: block;
+            position: absolute;
+            height: 30px;
+            width: 30px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+         }
+      </style>
+   </head>
+   <body>
+      <div id="board"></div>
+      <button id="next">Next Move</button>
+      <script src="script.js"></script>
+   </body>
+</html>
